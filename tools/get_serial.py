@@ -2,7 +2,7 @@ import serial
 from sys import platform
 from time import localtime
 
-baudrate = 9600 
+baudrate = 115200
 port = ''
 
 if platform == 'linux':
@@ -29,4 +29,7 @@ while(True):
 	minutes = time.tm_min
 	sec = time.tm_sec
 
-	print(f"[{hour}:{minutes}:{sec}] {log}")
+	# TODO: quando tiver apenas um dígio, por exemplo '15:26: 0',
+	#			cole o o zero no segundo dois pontos, ex: '15:26:0'
+	#
+	print(f"[{hour:2}:{minutes:2}:{sec:2}] {log}", end='')
