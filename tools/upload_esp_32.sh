@@ -9,7 +9,7 @@ if test -c $port; then
    arduino-cli compile get_temps \
       -b esp32:esp32:heltec_wifi_lora_32_V2 || exit 1
 
-   arduino-cli upload get_temps -p /dev/ttyUSB0 \
+   arduino-cli upload get_temps -p "$port" \
       -b esp32:esp32:heltec_wifi_lora_32_V2
 
    rm -rf get_temps/
