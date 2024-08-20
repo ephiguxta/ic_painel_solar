@@ -1,4 +1,4 @@
-port='/dev/ttyUSB0'
+port="$1"
 board='esp32:esp32:heltec_wifi_lora_32_V2'
 
 if test -c $port; then

@@ -1,5 +1,5 @@
 import serial
-from sys import platform
+from sys import platform, argv
 from time import localtime
 
 baudrate = 9600
@@ -9,7 +9,7 @@ if platform == 'linux':
 	# TODO: nem sempre ele vai pra essa porta, esse caso ocorre
 	#			ocorre apenas quando não há nenhum outro dispositivo
 	#			conectado.
-	port = '/dev/ttyUSB0'
+	port = argv[1]
 
 else:
 	# TODO: aqui é o mesmo caso no de cima, mas no windows.
